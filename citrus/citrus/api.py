@@ -43,6 +43,6 @@ def send_email(email_to, item):
     
     message = frappe.render_template(template.response_html, {"sales_invoices": sales_invoices})
         
-    frappe.sendmail(recipients=["test@example.com"], subject=subject, attachments=attachments, message=message)
+    frappe.sendmail(recipients=[email_to], subject=subject, attachments=attachments, message=message)
     
     frappe.msgprint("Email Sent Successfully", alert=True)
